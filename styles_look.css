@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 100px;
+}
+.chat-container {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.post_button {
+  align-self: flex-end;
+}
+
+.avatar {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.message-content {
+  background-color: white;
+  padding: 10px;
+}
+
+.message-options {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.message-options button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #6c63ff;
+  color: white;
+  cursor: pointer;
+}
+
+.message-options button:hover {
+  background-color: #4c47b5;
+}
+
+
+.separate-post-comment {
+  margin-bottom: 20px;
+}
+
+.user-input-container {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.user-input {
+  display: flex;
+  margin: 10px 10px;
+}
+
+.user-input textarea {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  height: 100px;
+}
+
+.user-input button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #6c63ff;
+  color: white;
+  cursor: pointer;
+  height: 26px;
+}
+
+.user-input button:hover {
+  background-color: #4c47b5;
+}
+
+.text_input {
+  resize: none;
+}
+
+.person_info_container {
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
