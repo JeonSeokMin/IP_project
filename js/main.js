@@ -51,7 +51,7 @@ const init = async() => {
       const boardItem = document.createElement('tr');
       boardItem.className = 'board-item';
       boardItem.addEventListener('click', () => {
-        window.location.href = `/board.html/${board.id}`;
+        window.location.href = `/board.html?contentId=${board.id}`;
       });
   
       const title = document.createElement('td');

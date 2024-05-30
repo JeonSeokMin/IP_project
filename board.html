@@ -3,54 +3,22 @@
   <head>
     <title>look_post</title>
     <link rel="stylesheet" href="./style/styles_look.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <!-- <div class="chat-header">
-      <h1>Book Chat</h1>
-    </div> -->
     <div class="chat-body">
-      <div class="message">
-        <div class="person_info_container">
-          <div class="avatar">&#128100;</div>
-          <p>전석콩</p>
+      <div id="post-container"></div>
+      <hr class="separate-post-comment" />
+      <div class="comment">
+        <div class="user-input-container">
+          <div class="user-input">
+            <textarea id="comment-input" class="text_input" cols="30" rows="10"></textarea>
+            <button id="post-button" class="post_button">작성하기</button>
+          </div>
         </div>
-        <div class="message-content">
-          <p>5공 6층에서 지갑 보신 분 계신가요?</p>
-        </div>
-      </div>
-      <div class="message-options">
-        <button>삭제</button>
-      </div>
-    </div>
-    <hr class="separate-post-comment" />
-    <div class="comment">
-      <div class="user-input-container">
-        <div class="user-input">
-          <textarea name="" class="text_input" cols="30" rows="10"></textarea>
-          <button class="post_button">작성하기</button>
-        </div>
-      </div>
-      <div class="message">
-        <div class="person_info_container">
-          <div class="avatar">&#128100;</div>
-          <p>전석콩콩이</p>
-        </div>
-        <div class="message-content">
-          <p>14시에 Y5609 에서 봤습니다.</p>
-        </div>
-      </div>
-      <hr />
-      <div class="message">
-        <div class="person_info_container">
-          <div class="avatar">&#128100;</div>
-          <p>전두광</p>
-        </div>
-        <div class="message-content">
-          <p>학생회에서 보관 중이라고 합니다. 찾아가 보세요.</p>
-        </div>
+        <div id="comments-container"></div>
       </div>
     </div>
-
     <script src="./js/script_look.js"></script>
   </body>
 </html>
