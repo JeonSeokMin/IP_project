@@ -51,7 +51,7 @@ const init = async() => {
       const boardItem = document.createElement('tr');
       boardItem.className = 'board-item';
       boardItem.addEventListener('click', () => {
-        window.location.href = `/boards/${board.id}`;
+        window.location.href = `/board.html/${board.id}`;
       });
   
       const title = document.createElement('td');
@@ -80,7 +80,7 @@ const init = async() => {
   
   const writeButton = document.getElementById('write-button');
   writeButton.addEventListener('click', () => {
-    window.location.href = '/borads/post';
+    window.location.href = '/post.html';
   });
 
 };
