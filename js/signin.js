@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: {
           'Content-Type': 'application/json',
         },
+        withCredentials: true 
       });
       const data = response.data;
       return data;
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (data) {
           alert("로그인 성공!");
           console.log(data);
-          // location.href = "./main.html";
+          location.href = "/";
         } else {
           alert("로그인 실패");
           idEl.value = "";
