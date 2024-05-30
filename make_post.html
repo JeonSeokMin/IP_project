@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>makePost page</title>
-    <link rel="stylesheet" href="styles_make.css" />
+    <link rel="stylesheet" href="./style/styles_make.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
 
@@ -16,24 +17,24 @@
 
     <div class="container">
       <div class="content_container">
-        <form>
+        <form id="postForm">
           <div class="form-group">
             <label for="title">제목</label>
-            <input type="text" class="title" name="title" />
+            <input type="text" class="title" name="title" id="title"/>
           </div>
           <div class="form-group">
-            <label for="content">분실물</label>
-            <input type="text" class="title" name="title" />
+            <label for="productName">분실물</label>
+            <input type="text" class="title" name="productName" id="productName"/>
           </div>
           <div class="form-group">
             <label for="content">본문</label>
-            <textarea class="content_input" name="content"></textarea>
+            <textarea class="content_input" name="content" id="content"></textarea>
           </div>
           <button type="submit">작성하기</button>
         </form>
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script_make.js"></script>
   </body>
 </html>
