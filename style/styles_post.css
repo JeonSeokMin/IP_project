@@ -3,11 +3,10 @@ body {
 }
 
 .header_container {
-  
-  text-align: center; /* Centered text */
-  font-size: 24px; /* Larger font size */
-  font-weight: bold; /* Bold text */
-  color: #333; /* Dark text color */
+  text-align: center; 
+  font-size: 24px; 
+  font-weight: bold;
+  color: #333; 
   margin-bottom: 20px;
 }
 
@@ -38,13 +37,13 @@ form {
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px; /* 각 그룹 사이에 간격 추가 */
+  margin-bottom: 30px;
   gap:10px;
 }
 
 label {
-  width: 100px; /* 라벨의 너비를 고정하여 정렬 */
-  margin-right: 10px; /* 라벨과 입력 필드 사이의 간격 추가 */
+  width: 100px;
+  margin-right: 10px; 
   font-weight: bold;
 }
 

@@ -15,6 +15,23 @@ const readBoards=async ()=>{
   }
 }
 
+const logout=async ()=>{
+  try {
+    const response = await axios.post("http://3.36.250.80:3000/api/auth/logout", {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = response.data;
+    console.log(data);
+    return data;
+
+  } catch (error) {
+    console.log(error);
+
+  }
+}
+
 
 
 
@@ -82,6 +99,11 @@ const init = async() => {
   writeButton.addEventListener('click', () => {
     window.location.href = '/post.html';
   });
+
+  const logoutButton = document.getElementById("logout-button");
+  logoutButton.addEventListener('click',()=>{
+    logout()
+  })
 
 };
 

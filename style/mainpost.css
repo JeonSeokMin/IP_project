@@ -58,4 +58,14 @@ thead {
  cursor: pointer;
 }
 
+#title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+#logout-button{
+  background: none;
+  border:none;
+  cursor: pointer;
+}
