@@ -1,5 +1,39 @@
 body {
-  padding:1.5em;
+  padding: 1.5em;
+}
+
+#second-header{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+#search-container {
+  
+}
+
+#search-input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+#search-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: #5a52d1;
 }
 
 table {
@@ -15,40 +49,39 @@ table {
 th {
   text-align: left;
 }
-  
+
 thead {
   font-weight: bold;
   color: #fff;
   background: #6c63ff;
 }
-  
- td, th {
+
+td, th {
   padding: 1em .5em;
   vertical-align: middle;
 }
-  
- td {
-  max-width:100px;
+
+td {
+  max-width: 100px;
   overflow: hidden;
   border-bottom: 1px solid rgba(0,0,0,.1);
   background: #fff;
   text-overflow: ellipsis;
 }
 
-#board-container{
-  width:100%;
+#board-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
- 
-#board-title{
-  margin :20px auto;
+
+#board-title {
+  margin: 20px auto;
 }
 
-#write-button{
-  align-self: flex-end;
-  width:100px;
-  margin: 20px 0;
+#write-button {
+  width: 100px;
+  justify-self:baseline;
   padding: 10px 20px;
   background-color: #6c63ff;
   color: white;
@@ -58,7 +91,7 @@ thead {
 }
 
 .board-item {
- cursor: pointer;
+  cursor: pointer;
 }
 
 #title-container {
@@ -67,8 +100,8 @@ thead {
   justify-content: center;
 }
 
-#logout-button{
+#logout-button {
   background: none;
-  border:none;
+  border: none;
   cursor: pointer;
 }

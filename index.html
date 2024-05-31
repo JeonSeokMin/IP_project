@@ -9,30 +9,36 @@
 </head>
 <body>
   <div id='board-container'>
-  <div id='title-container'>
-    <h1 id='board-title'>분실물 게시판</h1>
-    <button id='logout-button'>
-      <img src="/Logout.svg" alt="로그아웃 버튼"/>
-    </button>
-  </div>
-    <button id='write-button'>작성하기</button>
-  <div class="container">
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">제목</th>
-            <th scope="col">내용</th>
-            <th scope="col">분실물</th>
-            <th scope="col">작성자</th>
-          </tr>
-        </thead>
-        <tbody id='boardContainer'>
-        </tbody>
+    <div id='title-container'>
+      <h1 id='board-title'>분실물 게시판</h1>
+      <button id='logout-button'>
+        <img src="/Logout.svg" alt="로그아웃 버튼"/>
+      </button>
+    </div>
+    <div id='second-header'>
+      <button id='write-button'>작성하기</button>
+      <div id="search-container">
+      <input type="text" id="search-input" placeholder="Search...">
+      <button id="search-button">Search</button>
+    </div>
+    </div>
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">제목</th>
+              <th scope="col">내용</th>
+              <th scope="col">분실물</th>
+              <th scope="col">작성자</th>
+            </tr>
+          </thead>
+          <tbody id='boardContainer'>
+          </tbody>
         </table>
       </div>
     </div>
-    </div>
-  
+  </div>
   <script type="module" src="./js/main.js"></script>
-  </body>
+</body>
+</html>
