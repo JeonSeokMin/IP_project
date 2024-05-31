@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const titleHTML = `<h1>${post.title}</h1>`;
         titleContainer.innerHTML = titleHTML;
 
-        const productNameHTML = `<h2>상품명: ${post.productName}</h2>`;
+        const productNameHTML = `<h2>분실물: ${post.productName}</h2>`;
         productNameContainer.innerHTML = productNameHTML;
 
         const postHTML = `
