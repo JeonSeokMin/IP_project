@@ -1,78 +1,134 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 100px;
+  background-color: #f5f5f5;
 }
-.chat-container {
-  max-width: 600px;
+
+.chat-body {
+  max-width: 800px;
   margin: 0 auto;
-  border-radius: 5px;
-  overflow: hidden;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+#title-container h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#productName-container h2 {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
 .post_button {
   align-self: flex-end;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
+
+.post_button:hover {
+  background-color: #5a50e5;
+}
+
 .avatar {
   font-size: 24px;
   margin-right: 10px;
 }
+
 .message-content {
-  background-color: white;
-  padding: 10px;
+  background-color: #fafafa;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
+
 .message-options {
   display: flex;
   justify-content: flex-end;
+  margin-top: 10px;
 }
+
 .message-options button {
   margin: 0 5px;
   padding: 5px 10px;
   border: none;
   border-radius: 3px;
-  background-color: #6c63ff;
+  background-color: #ff6b6b;
   color: white;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
+
 .message-options button:hover {
-  background-color: #4c47b5;
+  background-color: #e55b5b;
 }
+
 .separate-post-comment {
-  margin-bottom: 20px;
+  margin: 20px 0;
+  border: none;
+  height: 1px;
+  background-color: #ddd;
 }
+
 .user-input-container {
   border: 2px solid #ddd;
   border-radius: 5px;
+  padding: 10px;
   margin-bottom: 10px;
+  background-color: #f9f9f9;
 }
+
 .user-input {
   display: flex;
-  margin: 10px 10px;
+  align-items: center;
 }
+
 .user-input textarea {
   flex-grow: 1;
-  padding: 5px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
   height: 100px;
+  margin-right: 10px;
 }
+
 .user-input button {
-  margin-left: 5px;
-  padding: 5px 10px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   background-color: #6c63ff;
   color: white;
   cursor: pointer;
-  height: 26px;
+  transition: background-color 0.3s;
 }
+
 .user-input button:hover {
   background-color: #5a50e5;
 }
+
 .text_input {
   resize: none;
 }
+
 .person_info_container {
   display: flex;
   height: 40px;
   align-items: center;
+  margin-bottom: 10px;
+}
+
+.comment {
+  padding-top: 20px;
 }
