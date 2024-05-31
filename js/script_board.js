@@ -38,10 +38,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const postContainer = document.getElementById("post-container");
     const commentsContainer = document.getElementById("comments-container");
     const postButton = document.getElementById("post-button");
-    const commentInput = document.querySelector(".text_input");
+    const commentInput = document.querySelector("text_input");
             
     // 포스트 데이터 가져오기
-    axios.get(`${baseURL}/api/boards/${postId}`)
+    axios.get(`${baseURL}/api/boards/${postId}`,{withCredentials: true,
+    headers: {
+      'Content-Type': 'application/json'
+    }})
     .then(response => {
         const data = response.data;
         displayPost(data);
@@ -102,7 +105,10 @@ document.addEventListener("DOMContentLoaded", function() {
     postButton.addEventListener("click", function() {
         const content = commentInput.value.trim();
         if (content) {
-        axios.post(`${baseURL}/api/boards/${postId}/comments`, { content })
+        axios.post(`${baseURL}/api/boards/${postId}/comments`, { content },{withCredentials: true,
+            headers: {
+              'Content-Type': 'application/json'
+            }})
             .then(response => {
             commentInput.value = '';
             displayComments(response.data.comments);  // 응답에 포함된 업데이트된 댓글을 표시합니다.
@@ -115,7 +121,10 @@ document.addEventListener("DOMContentLoaded", function() {
 function deletePost() {
     const confirmDelete = confirm("게시물을 삭제하시겠습니까?");
     if (confirmDelete) {
-        axios.delete(`${baseURL}/api/boards/${postId}`)
+        axios.delete(`${baseURL}/api/boards/${postId}`,{withCredentials: true,
+            headers: {
+              'Content-Type': 'application/json'
+            }})
         .then(response => {
             console.log("게시물이 성공적으로 삭제되었습니다.");
             alert("게시물이 성공적으로 삭제되었습니다.");
@@ -129,7 +138,10 @@ function deletePost() {
 function deleteComment(commentId) {
     const confirmDelete = confirm("댓글을 삭제하시겠습니까?");
     if (confirmDelete) {
-        axios.delete(`${baseURL}/api/boards/${postId}/comments/${commentId}`)
+        axios.delete(`${baseURL}/api/boards/${postId}/comments/${commentId}`,{withCredentials: true,
+            headers: {
+              'Content-Type': 'application/json'
+            }})
         .then(response => {
             console.log("댓글이 성공적으로 삭제되었습니다.");
             alert("댓글이 성공적으로 삭제되었습니다.");
