@@ -48,13 +48,14 @@ const displayBoard = (data) => {
     content.textContent = board.content;
     boardItem.appendChild(content);
 
-    const writerName = document.createElement('td');
-    writerName.textContent = board.writerName;
-    boardItem.appendChild(writerName);
 
     const productName = document.createElement('td');
     productName.textContent = board.productName;
     boardItem.appendChild(productName);
+
+    const writerName = document.createElement('td');
+    writerName.textContent = board.writerName;
+    boardItem.appendChild(writerName);
 
     boardContainer.appendChild(boardItem);
   });

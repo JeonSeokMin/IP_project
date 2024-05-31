@@ -46,6 +46,9 @@ table {
   overflow: hidden;
 }
 
+tr {
+  height: 50px;
+}
 th {
   text-align: left;
 }
@@ -63,6 +66,7 @@ td, th {
 
 td {
   max-width: 100px;
+  height: 30px;
   overflow: hidden;
   border-bottom: 1px solid rgba(0,0,0,.1);
   background: #fff;
@@ -91,6 +95,7 @@ td {
 }
 
 .board-item {
+  height: 40px;
   cursor: pointer;
 }
 

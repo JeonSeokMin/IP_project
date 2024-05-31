@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (data) {
           alert("로그인 성공!");
           console.log(data);
-          // location.href = "/";
+          location.href = "/";
         } else {
           alert("로그인 실패");
           idEl.value = "";
