@@ -11,6 +11,7 @@ document.getElementById('postForm').addEventListener('submit', function(event) {
       productName: productName
     };
     axios.post('https://3.36.250.80:3000/api/boards', postData, {
+      withCredentials: true,
       headers: {
         'Content-Type': 'application/json'
       }

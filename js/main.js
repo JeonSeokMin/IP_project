@@ -1,6 +1,7 @@
 const readBoards=async ()=>{
   try {
     const response = await axios.get("http://3.36.250.80:3000/api/boards", {
+      withCredentials: true,
       headers: {
         'Content-Type': 'application/json',
       },
