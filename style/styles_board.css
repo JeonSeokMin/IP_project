@@ -63,7 +63,8 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
   height: 500px;
-  white-space: pre-line;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .comment-content {
