@@ -34,9 +34,6 @@ const logout=async ()=>{
 }
 
 
-
-
-
 const init = async() => {
   const res =await readBoards();
   console.log(res)
