@@ -40,32 +40,12 @@ const logout=async ()=>{
 const init = async() => {
   const res =await readBoards();
   console.log(res)
-  
-  
-  const data = {
-    boards: [
-      {
-        id: 1,
-        title: "게시글 제목 1",
-        content: "게시글 내용 1",
-        writerName: "작성자 1",
-        productName: "상품명 1"
-      },
-      {
-        id: 2,
-        title: "게시글 제목 2",
-        content: "게시글 내용 2",
-        writerName: "작성자 2",
-        productName: "상품명 2"
-      },
-    ]
-  };
 
 
   const displayBoard = (data) => {
     const boardContainer = document.getElementById('boardContainer');
   
-    data.boards.forEach(board => {
+    data.forEach(board => {
       const boardItem = document.createElement('tr');
       boardItem.className = 'board-item';
       boardItem.addEventListener('click', () => {
@@ -94,7 +74,7 @@ const init = async() => {
     });
   };
   
-  displayBoard(data)
+  displayBoard(res)
   
   const writeButton = document.getElementById('write-button');
   writeButton.addEventListener('click', () => {
