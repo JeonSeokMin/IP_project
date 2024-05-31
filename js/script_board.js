@@ -31,7 +31,7 @@ const test_data = {
 document.addEventListener("DOMContentLoaded", function() {
     console.log(test_data)
     const postId = urlParams.get('contentId');
-    const baseURL = "https://3.36.250.80:3000";
+    const baseURL = "http://3.36.250.80:3000";
     
     const titleContainer = document.getElementById("title-container");
     const productNameContainer = document.getElementById("productName-container");
@@ -40,14 +40,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const postButton = document.getElementById("post-button");
     const commentInput = document.querySelector(".text_input");
             
-    // // 포스트 데이터 가져오기
-    // axios.get(`${baseURL}/api/boards/${postId}`)
-    // .then(response => {
-    //     const data = response.data;
-    //     displayPost(data);
-    //     displayComments(data.comments);
-    // })
-    // .catch(error => console.error('포스트 데이터를 가져오는 중 에러 발생:', error));
+    // 포스트 데이터 가져오기
+    axios.get(`${baseURL}/api/boards/${postId}`)
+    .then(response => {
+        const data = response.data;
+        displayPost(data);
+        displayComments(data.comments);
+    })
+    .catch(error => console.error('포스트 데이터를 가져오는 중 에러 발생:', error));
 
 
     // 포스트 표시하기
@@ -95,24 +95,21 @@ document.addEventListener("DOMContentLoaded", function() {
         commentsContainer.innerHTML += commentHTML;
         });
     }
-    // displayPost(test_data);
-    // displayComments(test_data.comments);
-
-    // // 새로운 댓글 작성하기
-    // postButton.addEventListener("click", function() {
-    //     const content = commentInput.value.trim();
-    //     if (content) {
-    //     axios.post(`${baseURL}/api/boards/${postId}/comments`, { content })
-    //         .then(response => {
-    //         commentInput.value = '';
-    //         displayComments(response.data.comments);  // 응답에 포함된 업데이트된 댓글을 표시합니다.
-    //         })
-    //         .catch(error => console.error('댓글을 작성하는 중 에러 발생:', error));
-    //     }
-    // });
-
     displayPost(test_data);
     displayComments(test_data.comments);
+
+    // 새로운 댓글 작성하기
+    postButton.addEventListener("click", function() {
+        const content = commentInput.value.trim();
+        if (content) {
+        axios.post(`${baseURL}/api/boards/${postId}/comments`, { content })
+            .then(response => {
+            commentInput.value = '';
+            displayComments(response.data.comments);  // 응답에 포함된 업데이트된 댓글을 표시합니다.
+            })
+            .catch(error => console.error('댓글을 작성하는 중 에러 발생:', error));
+        }
+    });
 });
 
 function deletePost() {
