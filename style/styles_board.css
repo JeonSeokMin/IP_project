@@ -1,10 +1,13 @@
+/* 전체적인 스타일 설정 */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
-  padding: 100px;
+  padding: 20px;
   background-color: #f5f5f5;
+  color: #333;
 }
 
+/* 메인 컨테이너 스타일 */
 .chat-body {
   max-width: 800px;
   margin: 0 auto;
@@ -14,18 +17,25 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* 제목 스타일 */
 #title-container h1 {
-  font-size: 24px;
+  font-size: 28px;
   color: #333;
   margin-bottom: 10px;
+  border-bottom: 2px solid #6c63ff;
+  padding-bottom: 5px;
 }
 
+/* 상품명 스타일 */
 #productName-container h2 {
-  font-size: 20px;
+  font-size: 22px;
   color: #666;
   margin-bottom: 20px;
+  border-bottom: 2px solid #6c63ff;
+  padding-bottom: 5px;
 }
 
+/* 버튼 스타일 */
 .post_button {
   align-self: flex-end;
   background-color: #6c63ff;
@@ -41,11 +51,13 @@ body {
   background-color: #5a50e5;
 }
 
+/* 아바타 스타일 */
 .avatar {
   font-size: 24px;
   margin-right: 10px;
 }
 
+/* 메시지 콘텐츠 스타일 */
 .message-content {
   background-color: #fafafa;
   padding: 15px;
@@ -54,6 +66,7 @@ body {
   margin-bottom: 10px;
 }
 
+/* 메시지 옵션 스타일 */
 .message-options {
   display: flex;
   justify-content: flex-end;
@@ -75,13 +88,21 @@ body {
   background-color: #e55b5b;
 }
 
-.separate-post-comment {
+/* 분리선 스타일 */
+
+hr {
   margin: 20px 0;
   border: none;
   height: 1px;
   background-color: #ddd;
 }
 
+.postComment_separate {
+  border: none;
+  height: 2px;
+}
+
+/* 유저 입력 컨테이너 스타일 */
 .user-input-container {
   border: 2px solid #ddd;
   border-radius: 5px;
@@ -90,6 +111,7 @@ body {
   background-color: #f9f9f9;
 }
 
+/* 유저 입력 스타일 */
 .user-input {
   display: flex;
   align-items: center;
@@ -122,6 +144,7 @@ body {
   resize: none;
 }
 
+/* 유저 정보 컨테이너 스타일 */
 .person_info_container {
   display: flex;
   height: 40px;
@@ -129,6 +152,7 @@ body {
   margin-bottom: 10px;
 }
 
+/* 댓글 섹션 스타일 */
 .comment {
   padding-top: 20px;
 }
