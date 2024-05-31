@@ -63,7 +63,6 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
   height: 300px;
-  white-space: pre-wrap; 
   word-wrap: break-word;
 }
 
@@ -85,7 +84,7 @@ body {
 }
 
 .message-options button {
-  margin: 0 5px;
+  margin: 0 0 0 5px;
   padding: 5px 10px;
   border: none;
   border-radius: 3px;
@@ -138,6 +137,7 @@ hr {
 }
 
 .user-input button {
+  align-self: flex-end;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -145,6 +145,7 @@ hr {
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-bottom: 3px;
 }
 
 .user-input button:hover {
