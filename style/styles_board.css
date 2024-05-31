@@ -34,7 +34,7 @@ body {
 }
 
 /* 버튼 스타일 */
-.post_button {
+.pt_button {
   align-self: flex-end;
   background-color: #6c63ff;
   color: white;
@@ -62,6 +62,18 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
+  height: 500px;
+  white-space: pre-line;
+}
+
+.comment-content {
+  background-color: #fafafa;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  height: 100px;
+  
 }
 
 /* 메시지 옵션 스타일 */

@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const postContainer = document.getElementById("post-container");
     const commentsContainer = document.getElementById("comments-container");
     const postButton = document.getElementById("post-button");
-    const commentInput = document.querySelector("text_input");
+    const commentInput = document.querySelector(".text_input");
             
     // 포스트 데이터 가져오기
     axios.get(`${baseURL}/api/boards/${postId}`,{withCredentials: true,
@@ -68,11 +68,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 <p>${post.writerName}</p>
             </div>
             <div class="message-content">
-                <p>${post.content}</p>
+                ${post.content}
             </div>
         </div>
         <div class="message-options">
-            ${post.isMine ? '<button onclick="deletePost()">삭제</button>' : ''}
+            ${post.isMine ? '<button id="postDeleteBtn">삭제</button>' : ''}
         </div>
         `;
         postContainer.innerHTML = postHTML;
@@ -88,18 +88,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="avatar">&#128100;</div>
                 <p>${comment.commentWriter}</p>
             </div>
-            <div class="message-content">
-                <p>${comment.commentContent}</p>
+            <div class="comment-content">
+                ${comment.commentContent}
             </div>
-            ${comment.isMyComment ? '<div class="message-options"><button onclick="deleteComment(${comment.commentId})">삭제</button></div>' : ''}
+            ${comment.isMyComment ? '<div class="message-options"><button id="commentsDeleteBtn_' + comment.commentId + '">삭제</button></div>' : ''}
             </div>
             <hr />
         `;
         commentsContainer.innerHTML += commentHTML;
         });
     }
-    displayPost(test_data);
-    displayComments(test_data.comments);
 
     // 새로운 댓글 작성하기
     postButton.addEventListener("click", function() {
@@ -111,43 +109,53 @@ document.addEventListener("DOMContentLoaded", function() {
             }})
             .then(response => {
             commentInput.value = '';
-            displayComments(response.data.comments);  // 응답에 포함된 업데이트된 댓글을 표시합니다.
+            window.location.reload();
             })
             .catch(error => console.error('댓글을 작성하는 중 에러 발생:', error));
         }
     });
+
+    function deletePost() {
+        const confirmDelete = confirm("게시물을 삭제하시겠습니까?");
+        if (confirmDelete) {
+            axios.delete(`${baseURL}/api/boards/${postId}`,{withCredentials: true,
+                headers: {
+                  'Content-Type': 'application/json'
+                }})
+            .then(response => {
+                console.log("게시물이 성공적으로 삭제되었습니다.");
+                alert("게시물이 성공적으로 삭제되었습니다.");
+                // 게시물 삭제 후 필요한 작업을 여기에 추가하세요
+                window.location.href = '/';
+            })
+            .catch(error => console.error('게시물을 삭제하는 중 에러 발생:', error));
+        }
+    }
+
+    function deleteComment(commentId) {
+        const confirmDelete = confirm("댓글을 삭제하시겠습니까?");
+        if (confirmDelete) {
+            axios.delete(`${baseURL}/api/boards/${postId}/comments/${commentId}`,{withCredentials: true,
+                headers: {
+                  'Content-Type': 'application/json'
+                }})
+            .then(response => {
+                console.log("댓글이 성공적으로 삭제되었습니다.");
+                alert("댓글이 성공적으로 삭제되었습니다.");
+                // 댓글 삭제 후 필요한 작업을 여기에 추가하세요
+            })
+            .catch(error => console.error('댓글을 삭제하는 중 에러 발생:', error));
+        }
+    }
+
+    const postDeleteBtn = document.getElementById("postDeleteBtn");
+    // 게시물 삭제 버튼 클릭 시
+    postDeleteBtn.addEventListener("click", function() {
+        deletePost();
+    });
 });
 
-function deletePost() {
-    const confirmDelete = confirm("게시물을 삭제하시겠습니까?");
-    if (confirmDelete) {
-        axios.delete(`${baseURL}/api/boards/${postId}`,{withCredentials: true,
-            headers: {
-              'Content-Type': 'application/json'
-            }})
-        .then(response => {
-            console.log("게시물이 성공적으로 삭제되었습니다.");
-            alert("게시물이 성공적으로 삭제되었습니다.");
-            // 게시물 삭제 후 필요한 작업을 여기에 추가하세요
-            window.location.href = '/';
-        })
-        .catch(error => console.error('게시물을 삭제하는 중 에러 발생:', error));
-    }
-}
 
-function deleteComment(commentId) {
-    const confirmDelete = confirm("댓글을 삭제하시겠습니까?");
-    if (confirmDelete) {
-        axios.delete(`${baseURL}/api/boards/${postId}/comments/${commentId}`,{withCredentials: true,
-            headers: {
-              'Content-Type': 'application/json'
-            }})
-        .then(response => {
-            console.log("댓글이 성공적으로 삭제되었습니다.");
-            alert("댓글이 성공적으로 삭제되었습니다.");
-            // 댓글 삭제 후 필요한 작업을 여기에 추가하세요
-        })
-        .catch(error => console.error('댓글을 삭제하는 중 에러 발생:', error));
-    }
-}
+
+
 
